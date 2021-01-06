@@ -1,6 +1,6 @@
 import os
 
-from imgaug.augmentables.segmaps import SegmentationMapsOnImage
+import imgaug.augmentables.segmaps as sg
 import config
 from imgaug import augmenters as iaa
 import re
@@ -113,7 +113,7 @@ class DataForGan:
             for mri_path, mask_path in image_mask_tuples:
                 mri = imageio.imread(mri_path)
                 mask = imageio.imread(mask_path)
-                mask = SegmentationMapsOnImage(mask, shape=mask.shape)
+                mask = sg.SegmentationMapsOnImage(mask, shape=mask.shape)
 
                 for _ in range(10):
                     mri_i, mask_i = seq(image=mri, segmentation_maps=mask)
