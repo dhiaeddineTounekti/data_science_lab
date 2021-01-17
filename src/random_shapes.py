@@ -2,6 +2,8 @@
 This file is primary taken from https://stackoverflow.com/questions/50731785/create-random-shape-contour-using-matplotlib
 """
 #
+import os
+
 import cv2
 import numpy as np
 from numpy import random
@@ -98,20 +100,21 @@ def get_random_points(n=5, scale=0.8, mindst=None, rec=0):
         return get_random_points(n=n, scale=scale, mindst=mindst, rec=rec + 1)
 
 
-def generate(number_of_masks_to_generate: int, position: tuple = None, size: tuple = (256, 256),
+def generate(number_of_masks_to_generate: int, path: str, position: tuple = None, size: tuple = (256, 256),
              number_of_points: int = None, rad: float = 0.2, edgy: float = 0.9, picture_scale: int = None):
     """
     Generates masks
-    :param number_of_masks_to_generate: the number of images to generate
-    :param position: box coordinate where to draw the mask [x1, x2, y1, y2]
-    :param size: picture size (width, height)
-    :param number_of_points: number of points used to generate the mask, more points means more complex shape
-    :param rad: controls the angles
-    :param edgy: controls how smooth is the shape. 0 is the smoothest
+    :param path: the path where to save the images.
+    :param number_of_masks_to_generate: the number of images to generate.
+    :param position: box coordinate where to draw the mask [x1, x2, y1, y2].
+    :param size: picture size (width, height).
+    :param number_of_points: number of points used to generate the mask, more points means more complex shape.
+    :param rad: controls the angles.
+    :param edgy: controls how smooth is the shape. 0 is the smoothest.
     :param picture_scale: proportion of the mask compared to the image size.
     :return:
     """
-    mpl.use("Qt5Agg")
+    mpl.use("Agg")
     mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=["#FFFFFF"])
     root = tkinter.Tk()
     my_dpi = root.winfo_fpixels('1i')
@@ -131,7 +134,7 @@ def generate(number_of_masks_to_generate: int, position: tuple = None, size: tup
 
     for index in range(number_of_masks_to_generate):
         if random_scale:
-            picture_scale = random.randint(low=0, high=50)
+            picture_scale = random.randint(low=1, high=50)
 
         if random_position:
             # Calculate the minimum height and width needed
@@ -144,8 +147,8 @@ def generate(number_of_masks_to_generate: int, position: tuple = None, size: tup
             position = [starting_point_x, starting_point_x + min_width_needed, starting_point_y,
                         starting_point_y + min_height_needed]
 
-            if random_point_number:
-                number_of_points = random.randint(8, 26)
+        if random_point_number:
+            number_of_points = random.randint(8, 26)
 
         a = get_random_points(n=number_of_points, scale=1)
         x, y, _ = get_bezier_curve(a, rad=rad, edgy=edgy)
@@ -153,6 +156,7 @@ def generate(number_of_masks_to_generate: int, position: tuple = None, size: tup
         # Draw first patch and save it
         fig = plt.figure(figsize=(w / my_dpi, h / my_dpi), dpi=my_dpi)
         fig.patch.set_facecolor('#000000')
+        plt.ioff()
         plt.axis('off')
         plt.fill_between(x, y)
         plt.plot(x, y, '#FFFFFF')
@@ -170,4 +174,5 @@ def generate(number_of_masks_to_generate: int, position: tuple = None, size: tup
         plt.axis('off')
         plt.imshow(image, extent=position)
 
-        fig2.savefig(str(index) + ".png", dpi=my_dpi)
+        fig2.savefig(os.path.join(path, str(index) + ".png"), dpi=my_dpi)
+        os.remove("tmp.png")

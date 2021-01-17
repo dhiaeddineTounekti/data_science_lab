@@ -20,4 +20,11 @@ class Config:
     VAL = 0.1
     TEST = 0.1
 
+    # The path to the folder where to save the generated masks
+    GAN_GENERATED_IMG = os.path.join(DATASET_DIR, "gan_generated_img")
+    GAN_GENERATED_MASKS = os.path.join(GAN_GENERATED_IMG, "gan_generated_masks")
+    GAN_GENERATED_MRI = os.path.join(GAN_GENERATED_IMG, "gan_generated_mri")
+
+    # GAN model name
+    GAN_MODEL_NAME = "mri_pix2pix"
 
