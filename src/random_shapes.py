@@ -100,10 +100,11 @@ def get_random_points(n=5, scale=0.8, mindst=None, rec=0):
         return get_random_points(n=n, scale=scale, mindst=mindst, rec=rec + 1)
 
 
-def generate(number_of_masks_to_generate: int, path: str, position: tuple = None, size: tuple = (256, 256),
+def generate(number_of_masks_to_generate: int, path: str, start_index: int = 0, position: tuple = None, size: tuple = (256, 256),
              number_of_points: int = None, rad: float = 0.2, edgy: float = 0.9, picture_scale: int = None):
     """
     Generates masks
+    :param start_index: first image will be named "start_index.png"
     :param path: the path where to save the images.
     :param number_of_masks_to_generate: the number of images to generate.
     :param position: box coordinate where to draw the mask [x1, x2, y1, y2].
@@ -132,7 +133,7 @@ def generate(number_of_masks_to_generate: int, path: str, position: tuple = None
     if number_of_points is None:
         random_point_number = True
 
-    for index in range(number_of_masks_to_generate):
+    for index in range(start_index, number_of_masks_to_generate):
         if random_scale:
             picture_scale = random.randint(low=1, high=50)
 
