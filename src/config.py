@@ -8,6 +8,11 @@ class Config:
     # the path of the original Kaggle dataset. Change it according to where you have put the dataset and what you have named the folder containing it.
     KAGGLE_3M_DATASET_DIR = os.path.join(DATASET_DIR, "lgg-mri-segmentation/kaggle_3m")
 
+    # Real data paths
+    REAL_DATA_DIR = os.path.join(DATASET_DIR, 'real_dataset')
+    REAL_TRAIN_MASK = os.path.join(REAL_DATA_DIR, "mask")
+    REAL_TRAIN_MRI = os.path.join(REAL_DATA_DIR, "mri")
+
     GAN_TRAIN_DATASET = os.path.join(DATASET_DIR, "gan_dataset")
     GAN_TRAIN_MASK = os.path.join(GAN_TRAIN_DATASET, "A")
     GAN_TRAIN_MRI = os.path.join(GAN_TRAIN_DATASET, "B")
