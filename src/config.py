@@ -1,7 +1,10 @@
 import os
+
+
 class Config:
-    WORKING_DIR = os.getcwd()
-    
+    PROJECT_DIR = 'C:\\Users\\dhiae\\data_science_lab'
+    WORKING_DIR = os.path.join(PROJECT_DIR, "src")
+
     # directory where all data will be put.
     DATASET_DIR = os.path.join(WORKING_DIR, "data")
 
@@ -16,7 +19,7 @@ class Config:
     GAN_TRAIN_DATASET = os.path.join(DATASET_DIR, "gan_dataset")
     GAN_TRAIN_MASK = os.path.join(GAN_TRAIN_DATASET, "A")
     GAN_TRAIN_MRI = os.path.join(GAN_TRAIN_DATASET, "B")
-    GAN_COMBINED_DATASET = os.path.join(GAN_TRAIN_DATASET,"mask_mri")
+    GAN_COMBINED_DATASET = os.path.join(GAN_TRAIN_DATASET, "mask_mri")
 
     IMAGE_EXTENSION = ".jpg"
 
@@ -33,3 +36,5 @@ class Config:
     # GAN model name
     GAN_MODEL_NAME = "mri_pix2pix"
 
+    # Dict containing boxes data
+    FILE_PATH = os.path.join(DATASET_DIR, 'boxes_classes.json')
