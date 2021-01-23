@@ -99,9 +99,6 @@ class DataForGan:
         if not os.path.isdir(conf.GAN_COMBINED_DATASET):
             os.mkdir(conf.GAN_COMBINED_DATASET)
 
-        # Table holding dataset splitting names
-        
-
         # Create mask put it in folder A and corresponding mri in folder B.
         # Both images need to have the same name
         idx = 1
