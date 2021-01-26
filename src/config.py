@@ -38,3 +38,11 @@ class Config:
 
     # Dict containing boxes data
     FILE_PATH = os.path.join(DATASET_DIR, 'boxes_classes.json')
+
+    # Checkpoint root folder
+    CHECKPOINT_FOLDER = os.path.join(WORKING_DIR, 'checkpoints')
+
+    # Training parameter
+    BATCH_SIZE = 8
+    EPOCHS_SEG = 1
+    NUM_WORKERS = 2
