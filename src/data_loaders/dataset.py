@@ -81,7 +81,7 @@ class CustomDataset(Dataset):
             box = self.real_data["mask_boxes_and_classes"][idx]['box']
 
         img = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
-        mask = cv2.imread(mask_path, cv2.IMREAD_UNCHANGED)
+        mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
 
         if is_real_data and self.train:
             # Use augmentation only on real data and during training.
