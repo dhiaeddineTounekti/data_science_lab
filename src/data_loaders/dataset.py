@@ -13,7 +13,7 @@ import src.config as config
 class CustomDataset(Dataset):
     """Brain MRI dataset"""
 
-    def __init__(self, mask_rcnn: bool = False, train: bool = False):
+    def __init__(self, mask_rcnn: bool = False, train: bool = False, mean=None, std=None, real_only: bool = True):
         """
         initiate the Dataset
         :param train:
@@ -30,15 +30,24 @@ class CustomDataset(Dataset):
         self.is_mask_rcnn = mask_rcnn
         self.train = train
 
+        # Make a list of composition to use
         self.transform = T.Compose([
             T.ToTensor()
         ])
+
+        self.real_data_only = real_only
+
+        self.mean = mean
+        self.std = std
+
         self.train_transform = A.Compose([
             A.HorizontalFlip(p=0.5),
             A.RandomBrightnessContrast(p=0.2),
         ])
 
     def __len__(self):
+        if self.real_data_only:
+            return self.real_data_size()
         return self.real_data_size() + self.gan_generated_data_size()
 
     def real_data_size(self):
@@ -66,7 +75,7 @@ class CustomDataset(Dataset):
         # You should make sure that when you concat both lists to create the dataset you have to concat them like this:
         # [Real data set, generated data set]
         is_real_data = True
-        if idx > self.real_data_size():
+        if idx >= self.real_data_size():
             is_real_data = False
             new_index = idx - self.real_data_size()
             image_path = os.path.join(self.conf.GAN_GENERATED_MRI,
@@ -92,6 +101,9 @@ class CustomDataset(Dataset):
         # Make the image in the interval [0-1] and convert images to tensors
         img = self.transform(img)
         mask = self.transform(mask)
+
+        if self.mean is not None and self.std is not None:
+            img = T.Normalize(mean=self.mean, std=self.std)(img)
 
         target = {
             'masks': mask,

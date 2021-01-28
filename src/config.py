@@ -1,5 +1,7 @@
 import os
 
+import torch
+
 
 class Config:
     PROJECT_DIR = 'C:\\Users\\dhiae\\data_science_lab'
@@ -46,3 +48,7 @@ class Config:
     BATCH_SIZE = 8
     EPOCHS_SEG = 1
     NUM_WORKERS = 2
+
+    # The mean and std of the dataset. you can get these using utils.calc_mean_std
+    DATASET_MEAN = torch.tensor([0.0875, 0.0833, 0.0919])
+    DTATSET_STD = torch.tensor([0.1229, 0.1182, 0.1217])

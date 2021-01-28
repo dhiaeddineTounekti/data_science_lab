@@ -1,10 +1,13 @@
 import json
 
+import torch
+from torch.utils.data import DataLoader
+
 import src.config as config
 import cv2
 import os
 import shutil
-import numpy as np
+import src.data_loaders.dataset as dat
 
 
 def generate_boxes():
@@ -91,3 +94,39 @@ def group_data():
 
                     # Advance counter
                     idx += 1
+
+
+def calc_mean_std() -> tuple:
+    """
+    Calculates mean and std of the database
+    :return: mean and std
+    """
+    conf = config.Config()
+    dataset = dat.CustomDataset()
+    dataloader = DataLoader(
+        dataset,
+        batch_size=conf.BATCH_SIZE,
+        num_workers=1,
+        shuffle=False
+    )
+
+    torch.device('cuda')
+
+    nimages = 0
+    mean = 0.0
+    var = 0.0
+    for i_batch, batch_target in enumerate(dataloader):
+        batch = batch_target[0]
+        # Rearrange batch to be the shape of [B, C, W * H]
+        batch = batch.view(batch.size(0), batch.size(1), -1)
+        # Update total number of images
+        nimages += batch.size(0)
+        # Compute mean and std here
+        mean += batch.mean(2).sum(0)
+        var += batch.var(2).sum(0)
+
+    mean /= nimages
+    var /= nimages
+    std = torch.sqrt(var)
+
+    return mean, std

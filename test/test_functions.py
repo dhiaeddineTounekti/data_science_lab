@@ -7,6 +7,7 @@ from src import config
 from src.data_loaders import dataset
 from src.datagan import DataForGan
 from src.random_shapes import generate
+from src.utils import calc_mean_std
 
 
 class MyTestCase(unittest.TestCase):
@@ -42,6 +43,11 @@ class MyTestCase(unittest.TestCase):
     def test_data_augment(self):
         datagan = DataForGan()
         datagan.augmente_data()
+
+    def test_calc_mean_std(self):
+        mean, std = calc_mean_std()
+        self.assertGreater(mean.sum(), 0)
+        self.assertGreater(std.sum(), 0)
 
 
 if __name__ == '__main__':
