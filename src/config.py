@@ -1,5 +1,4 @@
 import os
-
 import torch
 
 
@@ -46,7 +45,7 @@ class Config:
 
     # Training parameter
     BATCH_SIZE = 8
-    EPOCHS_SEG = 1
+    EPOCHS_SEG = 100
     NUM_WORKERS = 2
 
     # The mean and std of the dataset. you can get these using utils.calc_mean_std
