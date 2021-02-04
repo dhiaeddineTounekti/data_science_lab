@@ -1,3 +1,4 @@
+import torch
 from torch import nn
 
 """
@@ -25,27 +26,40 @@ class IoUScore(nn.Module):
         return IoU
 
 
-def pixel_acc(target, predicted):
-    if target.shape != predicted.shape:
-        print("target has dimension", target.shape, ", predicted values have shape", predicted.shape)
-        return
+class PixelAccuracy(nn.Module):
+    """
+    This supposes that the matrix has only 0 and 1 values
+    """
 
-    if target.dim() != 4:
-        print("target has dim", target.dim(), ", Must be 4.")
-        return
+    def __init__(self):
+        super(PixelAccuracy, self).__init__()
 
-    acc_sum = 0
-    for i in range(target.shape[0]):
-        target_arr = target[i, :, :, :].clone().detach().cpu().numpy().argmax(0)
-        predicted_arr = predicted[i, :, :, :].clone().detach().cpu().numpy().argmax(0)
+    def forward(self, predicted, target):
+        """
+        Careful that forward here only considers images that are 4 dim and has only 0 and 1 values
+        :param predicted: predicted images
+        :param target: target images
+        :return:
+        """
+        if target.shape != predicted.shape:
+            print("target has dimension", target.shape, ", predicted values have shape", predicted.shape)
+            return
 
-        same = (target_arr == predicted_arr).sum()
-        a, b = target_arr.shape
-        total = a * b
-        acc_sum += same / total
+        if target.dim() != 4:
+            print("target has dim", target.dim(), ", Must be 4.")
+            return
 
-    pixel_accuracy = acc_sum / target.shape[0]
-    return pixel_accuracy
+        output = predicted.view(-1, )
+        reshaped_target = target.view(-1, ).float()
+
+        tp = torch.sum(output * reshaped_target)  # TP
+        fp = torch.sum(output * (1 - reshaped_target))  # FP
+        fn = torch.sum((1 - output) * reshaped_target)  # FN
+        tn = torch.sum((1 - output) * (1 - reshaped_target))  # TN
+
+        pixel_acc = (tp + tn) / (tp + tn + fp + fn)
+
+        return pixel_acc
 
 
 class DiceScore(nn.Module):

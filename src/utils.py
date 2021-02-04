@@ -3,7 +3,7 @@ import json
 import torch
 from torch.utils.data import DataLoader
 
-import src.config as config
+import config
 import cv2
 import os
 import shutil

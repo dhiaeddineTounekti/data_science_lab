@@ -7,7 +7,7 @@ import torch
 import torchvision.transforms as T
 from torch.utils.data import Dataset
 
-import src.config as config
+import config
 
 
 class CustomDataset(Dataset):

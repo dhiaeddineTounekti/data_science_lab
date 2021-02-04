@@ -10,11 +10,11 @@ import torch.optim as optimizer
 from torch.nn import DataParallel
 from torch.utils.data import SubsetRandomSampler, DataLoader
 
-import src.config as config
-import src.data_loaders.dataset as dataset
-from src.models.dice_loss import BinaryDiceLoss
-from src.models.mask_rcnn import MaskRCNN
-from src.models.u_net import UNet
+import config as config
+import data_loaders.dataset as dataset
+from metrics.metrics import PixelAccuracy, DiceScore, IoUScore
+from models.mask_rcnn import MaskRCNN
+from models.u_net import UNet
 
 conf = config.Config()
 
@@ -67,30 +67,7 @@ def create_model_dict() -> dict:
                                        batch_size=conf.BATCH_SIZE, num_workers=4)
                 }
             }
-        },
-        'mask_rcnn': {
-            'model': MaskRCNN(),
-            'data': {
-                'real_data': {
-                    'train': DataLoader(dataset=mask_rcnn_dataset_train, sampler=train_sampler,
-                                        batch_size=conf.BATCH_SIZE,
-                                        num_workers=conf.NUM_WORKERS),
-                    'val': DataLoader(dataset=test_dataset, sampler=val_sampler, batch_size=conf.BATCH_SIZE,
-                                      num_workers=conf.NUM_WORKERS),
-                    'test': DataLoader(dataset=test_dataset, sampler=test_sampler,
-                                       batch_size=conf.BATCH_SIZE,
-                                       num_workers=conf.NUM_WORKERS)
-                },
-                'gan_data': {
-                    'train': DataLoader(dataset=mask_rcnn_dataset_train, sampler=train_sampler_augmented,
-                                        batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS),
-                    'val': DataLoader(dataset=test_dataset, sampler=val_sampler_augmented,
-                                      batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS),
-                    'test': DataLoader(dataset=test_dataset, sampler=test_sampler_augmented,
-                                       batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS)
-                }
-            }
-        },
+        }
     }
 
 
@@ -245,7 +222,9 @@ def test(target_model: nn.Module, data_loader: DataLoader,
 
     # Initiate the loss
     bcewl_loss_sum = 0.0
-    dice_loss_sum = 0.0
+    dice_score_sum = 0.0
+    mean_iou_sum = 0.0
+    pixel_accuracy_sum = 0.0
 
     # Open Log file
     file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss.log')
@@ -255,7 +234,8 @@ def test(target_model: nn.Module, data_loader: DataLoader,
         for batch_idx, (data, target) in enumerate(data_loader):
             # copy data to gpu
             data, target = data.to('cuda'), target.to('cuda')
-            filter = nn.Threshold(0.5, 0.0)
+            filter = nn.Threshold(conf.FILTER_THRESHOLD, 0.0)
+            negative_filter = nn.Threshold(-conf.FILTER_THRESHOLD, -1.0)
 
             output = target_model(data)
 
@@ -273,29 +253,33 @@ def test(target_model: nn.Module, data_loader: DataLoader,
 
                 # Stack the list of tensors
                 inverted_output = torch.stack(list_of_masks)
-                # Filter the matrix. every value <= 0.5 will be turned to 0.
-                filtered_output = filter(inverted_output)
+                # Filter the matrix. every value <= 0.5 will be turned to 0 and those who are > 0.5 will be turned to 1
+                filtered_output = -negative_filter(-filter(inverted_output))
 
             else:
                 output = target_model(data)
                 # Filter output
-                filtered_output = filter(output)
-
-            dice_loss_layer = BinaryDiceLoss()
+                filtered_output = -negative_filter(-filter(output))
 
             bcewl_loss = f.binary_cross_entropy_with_logits(filtered_output, target)
-            dice_loss = dice_loss_layer(filtered_output, target)
+            dice_score = DiceScore()(inputs=filtered_output, targets=target)
+            mean_iou_score = IoUScore()(inputs=filtered_output, targets=target)
+            pixel_accuracy = PixelAccuracy()(predicted=filtered_output, target=target)
 
             # Sum the losses
             bcewl_loss_sum += float(bcewl_loss)
-            dice_loss_sum += float(dice_loss)
+            dice_score_sum += float(dice_score)
+            mean_iou_sum += float(mean_iou_score)
+            pixel_accuracy_sum += float(pixel_accuracy)
 
-    message = f'End of Test | Dice Loss: {dice_loss_sum / len(data_loader)} | Binary Cross Entropy With Logits Loss: {bcewl_loss_sum / len(data_loader)}'
+    message = f'End of Test | Dice Loss: {dice_score_sum / len(data_loader)} | Binary Cross Entropy With Logits Loss: {bcewl_loss_sum / len(data_loader)}'
     log_file.write(f'\n {message} \n')
     log_file.close()
 
     return {'bcewl_loss': bcewl_loss_sum / len(data_loader),
-            'dice_loss': dice_loss_sum / len(data_loader)}
+            'dice_score': dice_score_sum / len(data_loader),
+            'mean_iou': mean_iou_sum / len(data_loader),
+            'pixel_accuracy': pixel_accuracy_sum / len(data_loader)}
 
 
 if __name__ == "__main__":

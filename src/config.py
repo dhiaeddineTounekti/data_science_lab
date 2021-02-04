@@ -47,7 +47,10 @@ class Config:
     BATCH_SIZE = 8
     EPOCHS_SEG = 100
     NUM_WORKERS = 2
+    FILTER_THRESHOLD = 0.5
 
     # The mean and std of the dataset. you can get these using utils.calc_mean_std
     DATASET_MEAN = torch.tensor([0.0875, 0.0833, 0.0919])
     DTATSET_STD = torch.tensor([0.1229, 0.1182, 0.1217])
+
+
