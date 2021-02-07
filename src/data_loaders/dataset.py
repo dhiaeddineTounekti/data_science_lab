@@ -5,19 +5,23 @@ import albumentations as A
 import cv2
 import torch
 import torchvision.transforms as T
+from skimage.exposure import rescale_intensity
 from torch.utils.data import Dataset
 
+import numpy as np
 import config
 
 
 class CustomDataset(Dataset):
     """Brain MRI dataset"""
 
-    def __init__(self, mask_rcnn: bool = False, train: bool = False, mean=None, std=None, real_only: bool = True):
+    def __init__(self, mask_rcnn: bool = False, train: bool = False, mean=None, std=None, real_only: bool = True,
+                 ref_model: bool = False):
         """
         initiate the Dataset
         :param train:
         :param mask_rcnn: parameter to know if we are using mask rcnn or unet because they train differently
+        :param ref_model: sets if the model being tested is ref_model or not.
         """
         self.conf = config.Config()
         # Open json file.
@@ -44,6 +48,8 @@ class CustomDataset(Dataset):
             A.HorizontalFlip(p=0.5),
             A.RandomBrightnessContrast(p=0.2),
         ])
+
+        self.ref_model = ref_model
 
     def __len__(self):
         if self.real_data_only:
@@ -102,8 +108,12 @@ class CustomDataset(Dataset):
         img = self.transform(img)
         mask = self.transform(mask)
 
-        if self.mean is not None and self.std is not None:
+        if self.mean is not None and self.std is not None and not self.ref_model:
             img = T.Normalize(mean=self.mean, std=self.std)(img)
+
+        # Normalize the way the ref_model did
+        if self.ref_model:
+            img = self.normalize_volume(img.cpu().detach().numpy())
 
         target = {
             'masks': mask,
@@ -119,3 +129,18 @@ class CustomDataset(Dataset):
             return img, target
 
         return img, mask
+
+    def normalize_volume(self, volume):
+        """
+        Normalize image using mean over all the channels and std over all the channels
+        :param volume: the image to normalize
+        :return: Tensor normalized
+        """
+        p10 = np.percentile(volume, 10)
+        p99 = np.percentile(volume, 99)
+        volume = rescale_intensity(volume, in_range=(p10, p99))
+        m = np.mean(volume)
+        s = np.std(volume)
+        volume = torch.tensor(volume, dtype=torch.float32)
+        volume = T.Normalize(mean=m, std=s)(volume)
+        return volume

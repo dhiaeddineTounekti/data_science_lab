@@ -24,10 +24,8 @@ class Config:
 
     IMAGE_EXTENSION = ".jpg"
 
-    # data split proportions
-    TRAIN = 0.8
-    VAL = 0.1
-    TEST = 0.1
+    # K-Folds. The split will be 1/K_fold for validation and the same for test and the rest is for the training.
+    K_FOLD = 10
 
     # The path to the folder where to save the generated masks
     GAN_GENERATED_IMG = os.path.join(DATASET_DIR, "gan_generated_img")

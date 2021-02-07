@@ -19,28 +19,41 @@ from models.u_net import UNet
 conf = config.Config()
 
 
-def get_dataset_split(real_dataset_size: int, gan_generated_dataset_size: int, augmented: bool = False) -> tuple:
+def get_dataset_split(real_indexes: list, gan_data_indexes: list, augmented: bool = False,
+                      val_fold: int = None) -> tuple:
     """
     Split the data into train, validation and test.
     make sure that the gan generated data is not included in the validation and test dataset.
     :param augmented: controls if the gan generated data are included or not.
+    :param number_of_folds: The number of folds we have or the k variable in k-fold
+    :param val_fold: the validation split fold number. The test fold will be the index just before
     :param gan_generated_dataset_size: size of the gan generated dataset.
     :param real_dataset_size: real dataset size.
     :return:
     """
-    real_index = list(range(real_dataset_size))
-    gan_data_index = list(range(gan_generated_dataset_size))
-    # Shuffle list indexes
-    random.shuffle(real_index)
-    random.shuffle(gan_data_index)
+    assert 0 < val_fold <= conf.K_FOLD, f'Validation fold index should be in [1, {conf.K_FOLD}], got {val_fold}'
 
-    val_index_start = int(conf.TRAIN * real_dataset_size)
-    test_index_start = int(conf.VAL * real_dataset_size) + val_index_start
+    real_dataset_size = len(real_indexes)
+    fold_size = real_dataset_size // conf.K_FOLD
+
+    val_index_start = fold_size * ((val_fold - 1) % conf.K_FOLD)
+    val_index_end = fold_size + val_index_start
+    test_index_start = fold_size * (val_fold % conf.K_FOLD)
+    test_index_end = test_index_start + fold_size
 
     # Assign to each split the corresponding indexes
-    train_indexes = real_index[:val_index_start] + gan_data_index if augmented else real_index[:val_index_start]
-    val_indexes = real_index[val_index_start: test_index_start]
-    test_indexes = real_index[test_index_start:]
+    if val_fold == 10:
+        train_indexes = real_indexes[test_index_end:val_index_start] + real_indexes[
+                                                                       val_index_end:] + gan_data_indexes if augmented else \
+            real_indexes[test_index_end:val_index_start] + real_indexes[val_index_end:]
+
+    else:
+        train_indexes = real_indexes[:val_index_start] + real_indexes[
+                                                         test_index_end:] + gan_data_indexes if augmented else \
+            real_indexes[:val_index_start] + real_indexes[test_index_end:]
+
+    val_indexes = real_indexes[val_index_start: val_index_end]
+    test_indexes = real_indexes[test_index_start: test_index_end]
 
     return SubsetRandomSampler(train_indexes), SubsetRandomSampler(val_indexes), SubsetRandomSampler(test_indexes)
 
@@ -66,7 +79,12 @@ def create_model_dict() -> dict:
                     'test': DataLoader(dataset=test_dataset, sampler=test_sampler_augmented,
                                        batch_size=conf.BATCH_SIZE, num_workers=4)
                 }
-            }
+            },
+            'ref_model': torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet',
+                                        in_channels=3, out_channels=1, init_features=32, pretrained=True),
+            'ref_test': DataLoader(dataset=ref_model_test_dataset, sampler=test_sampler,
+                                   batch_size=conf.BATCH_SIZE, num_workers=4)
+
         }
     }
 
@@ -90,7 +108,7 @@ def invert_dict_of_tensors(target):
 
 
 def train(target_model: nn.Module, data_loader: DataLoader, opt: optimizer.Optimizer, epoch: int,
-          model_name: str, data_type: str) -> float:
+          model_name: str, data_type: str, k_iteration: int) -> float:
     """
     Trains the model and logs the training result in a file.
     :param data_type: the name of the data loader wither it is real or gan augmented
@@ -106,7 +124,7 @@ def train(target_model: nn.Module, data_loader: DataLoader, opt: optimizer.Optim
     loss_sum = 0.0
 
     # Open Log file
-    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss.log')
+    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss_{k_iteration}.log')
     log_file = open(file_name, 'a+')
 
     start_time_epoch = time.time()
@@ -145,7 +163,7 @@ def train(target_model: nn.Module, data_loader: DataLoader, opt: optimizer.Optim
 
 
 def validate(target_model: nn.Module, data_loader: DataLoader, epoch: int,
-             model_name: str, data_type: str) -> float:
+             model_name: str, data_type: str, k_iteration: int) -> float:
     """
     validate the model.
     :param model_name: the model name
@@ -153,6 +171,7 @@ def validate(target_model: nn.Module, data_loader: DataLoader, epoch: int,
     :param epoch: the epoch number
     :param data_type: real data or gan generated data
     :param target_model: the model instance
+    :param k_iteration: iteration number
     :return: this epoch validation loss
     """
     target_model.eval()
@@ -162,7 +181,7 @@ def validate(target_model: nn.Module, data_loader: DataLoader, epoch: int,
     loss_sum = 0.0
 
     # Open Log file
-    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss.log')
+    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss_{k_iteration}.log')
     log_file = open(file_name, 'a+')
 
     start_time_epoch = time.time()
@@ -202,13 +221,13 @@ def validate(target_model: nn.Module, data_loader: DataLoader, epoch: int,
     if loss_sum / len(data_loader) < best_eval_loss:
         best_eval_loss = loss_sum / len(data_loader)
         torch.save(target_model,
-                   os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_best_model.pth'))
+                   os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_best_model_{k_iteration}.pth'))
 
     return loss_sum / len(data_loader)
 
 
 def test(target_model: nn.Module, data_loader: DataLoader,
-         model_name: str, data_type: str) -> dict:
+         model_name: str, data_type: str, k_iteration: int) -> dict:
     """
     validate the model.
     :param model_name: the model name
@@ -227,7 +246,7 @@ def test(target_model: nn.Module, data_loader: DataLoader,
     pixel_accuracy_sum = 0.0
 
     # Open Log file
-    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss.log')
+    file_name = os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_training_loss_{k_iteration}.log')
     log_file = open(file_name, 'a+')
 
     with torch.no_grad():
@@ -292,48 +311,69 @@ if __name__ == "__main__":
     mask_rcnn_dataset_train = dataset.CustomDataset(mask_rcnn=True, train=True, mean=conf.DATASET_MEAN,
                                                     std=conf.DTATSET_STD)
     test_dataset = dataset.CustomDataset(train=False, mean=conf.DATASET_MEAN, std=conf.DTATSET_STD)
+    ref_model_test_dataset = dataset.CustomDataset(train=False, ref_model=True)
 
-    # Make train sampler for gan augmented data and real_data
-    train_sampler, val_sampler, test_sampler = get_dataset_split(real_dataset_size=test_dataset.real_data_size(),
-                                                                 gan_generated_dataset_size=test_dataset.gan_generated_data_size())
-    train_sampler_augmented, val_sampler_augmented, test_sampler_augmented = get_dataset_split(
-        real_dataset_size=test_dataset.real_data_size(),
-        gan_generated_dataset_size=test_dataset.gan_generated_data_size(), augmented=True)
+    # Make list of indexes
+    real_indexes = list(range(test_dataset.real_data_size()))
+    gan_data_indexes = list(range(test_dataset.gan_generated_data_size()))
 
-    # Prepare data loaders for different models
-    models_dict = create_model_dict()
-    # Initiate result dict
-    model_data = {}
-    for model_name, value in models_dict.items():
-        # Get the model to work in a multi-gpu environment
-        model = DataParallel(value['model'])
-        # Prepare optimizer
-        opt = optimizer.Adam(lr=0.0001, params=model.parameters())
+    # Shuffle list indexes
+    random.shuffle(gan_data_indexes)
+    random.shuffle(real_indexes)
 
-        model_data[model_name] = {}
-        # Iterate through both kind of datasets:
-        for data_type, dataloader_dict in value['data'].items():
-            model_data[model_name][data_type] = {
-                'training_loss': [],
-                'eval_loss': [],
-                'test_loss': {}
-            }
-            global best_eval_loss
-            best_eval_loss = 100
-            for epoch in range(1, conf.EPOCHS_SEG + 1):
-                training_loss = train(target_model=model, data_loader=dataloader_dict['train'], opt=opt, epoch=epoch,
-                                      model_name=model_name, data_type=data_type)
-                model_data[model_name][data_type]['training_loss'].append(training_loss)
+    k_fold_dict = {}
 
-                eval_loss = validate(target_model=model, data_loader=dataloader_dict['val'], epoch=epoch,
-                                     model_name=model_name,
-                                     data_type=data_type)
-                model_data[model_name][data_type]['eval_loss'].append(eval_loss)
+    for k_iteration in range(1, conf.K_FOLD + 1):
+        # Make train sampler for gan augmented data and real_data
+        train_sampler, val_sampler, test_sampler = get_dataset_split(real_indexes=real_indexes,
+                                                                     gan_data_indexes=gan_data_indexes,
+                                                                     val_fold=k_iteration)
+        train_sampler_augmented, val_sampler_augmented, test_sampler_augmented = get_dataset_split(
+            real_indexes=real_indexes, gan_data_indexes=gan_data_indexes, augmented=True, val_fold=k_iteration)
 
-            test_loss = test(target_model=model, data_loader=dataloader_dict['test'], model_name=model_name,
-                             data_type=data_type)
-            model_data[model_name][data_type]['test_loss'] = test_loss
+        # Prepare data loaders for different models
+        models_dict = create_model_dict()
+        # Initiate result dict
+        model_data = {}
+        for model_name, value in models_dict.items():
+            # Get the model to work in a multi-gpu environment
+            model = DataParallel(value['model'])
+            ref_model = DataParallel(value['ref_model'])
+            # Prepare optimizer
+            opt = optimizer.Adam(lr=0.0001, params=model.parameters())
+
+            model_data[model_name] = {}
+            # Iterate through both kind of datasets:
+            for data_type, dataloader_dict in value['data'].items():
+                model_data[model_name][data_type] = {
+                    'training_loss': [],
+                    'eval_loss': [],
+                    'test_loss': {}
+                }
+                global best_eval_loss
+                best_eval_loss = 100
+                for epoch in range(1, conf.EPOCHS_SEG + 1):
+                    training_loss = train(target_model=model, data_loader=dataloader_dict['train'], opt=opt,
+                                          epoch=epoch,
+                                          model_name=model_name, data_type=data_type, k_iteration=k_iteration)
+                    model_data[model_name][data_type]['training_loss'].append(training_loss)
+
+                    eval_loss = validate(target_model=model, data_loader=dataloader_dict['val'], epoch=epoch,
+                                         model_name=model_name, data_type=data_type, k_iteration=k_iteration)
+                    model_data[model_name][data_type]['eval_loss'].append(eval_loss)
+
+                test_loss = test(target_model=model, data_loader=dataloader_dict['test'], model_name=model_name,
+                                 data_type=data_type, k_iteration=k_iteration)
+
+                model_data[model_name][data_type]['test_loss'] = test_loss
+
+            # Test the ref model on the test set after finishing the iteration for both other data types
+            ref_model_test_loss = test(target_model=ref_model, data_loader=value['ref_test'],
+                                       model_name=model_name, data_type='test_model_data', k_iteration=k_iteration)
+            model_data[model_name]['ref_test_loss'] = ref_model_test_loss
+
+        k_fold_dict[k_iteration] = model_data
 
     final_result_file = open(os.path.join(conf.CHECKPOINT_FOLDER, 'final_result.json'), 'w')
-    final_result_file.write(json.dumps(model_data))
+    final_result_file.write(json.dumps(k_fold_dict))
     final_result_file.close()
