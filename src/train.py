@@ -65,25 +65,25 @@ def create_model_dict() -> dict:
             'data': {
                 'real_data': {
                     'train': DataLoader(dataset=unet_dataset_train, sampler=train_sampler, batch_size=conf.BATCH_SIZE,
-                                        num_workers=4),
+                                        num_workers=conf.NUM_WORKERS),
                     'val': DataLoader(dataset=test_dataset, sampler=val_sampler, batch_size=conf.BATCH_SIZE,
-                                      num_workers=4),
+                                      num_workers=conf.NUM_WORKERS),
                     'test': DataLoader(dataset=test_dataset, sampler=test_sampler, batch_size=conf.BATCH_SIZE,
-                                       num_workers=4)
+                                       num_workers=conf.NUM_WORKERS)
                 },
                 'gan_data': {
                     'train': DataLoader(dataset=unet_dataset_train, sampler=train_sampler_augmented,
-                                        batch_size=conf.BATCH_SIZE, num_workers=4),
+                                        batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS),
                     'val': DataLoader(dataset=test_dataset, sampler=val_sampler_augmented,
-                                      batch_size=conf.BATCH_SIZE, num_workers=4),
+                                      batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS),
                     'test': DataLoader(dataset=test_dataset, sampler=test_sampler_augmented,
-                                       batch_size=conf.BATCH_SIZE, num_workers=4)
+                                       batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS)
                 }
             },
             'ref_model': torch.hub.load('mateuszbuda/brain-segmentation-pytorch', 'unet',
                                         in_channels=3, out_channels=1, init_features=32, pretrained=True),
             'ref_test': DataLoader(dataset=ref_model_test_dataset, sampler=test_sampler,
-                                   batch_size=conf.BATCH_SIZE, num_workers=4)
+                                   batch_size=conf.BATCH_SIZE, num_workers=conf.NUM_WORKERS)
 
         }
     }
@@ -220,7 +220,7 @@ def validate(target_model: nn.Module, data_loader: DataLoader, epoch: int,
 
     if loss_sum / len(data_loader) < best_eval_loss:
         best_eval_loss = loss_sum / len(data_loader)
-        torch.save(target_model,
+        torch.save(target_model.state_dict(),
                    os.path.join(conf.CHECKPOINT_FOLDER, f'{model_name}_{data_type}_best_model_{k_iteration}.pth'))
 
     return loss_sum / len(data_loader)
@@ -337,8 +337,8 @@ if __name__ == "__main__":
         model_data = {}
         for model_name, value in models_dict.items():
             # Get the model to work in a multi-gpu environment
-            model = DataParallel(value['model'])
-            ref_model = DataParallel(value['ref_model'])
+            model = DataParallel(value['model']).to('cuda')
+            ref_model = DataParallel(value['ref_model']).to('cuda')
             # Prepare optimizer
             opt = optimizer.Adam(lr=0.0001, params=model.parameters())
 

@@ -3,7 +3,7 @@ import torch
 
 
 class Config:
-    PROJECT_DIR = 'C:\\Users\\dhiae\\data_science_lab'
+    PROJECT_DIR = '/root/data_science_lab'
     WORKING_DIR = os.path.join(PROJECT_DIR, "src")
 
     # directory where all data will be put.
@@ -42,9 +42,9 @@ class Config:
     CHECKPOINT_FOLDER = os.path.join(WORKING_DIR, 'checkpoints')
 
     # Training parameter
-    BATCH_SIZE = 8
+    BATCH_SIZE = 64
     EPOCHS_SEG = 100
-    NUM_WORKERS = 2
+    NUM_WORKERS = 8
     FILTER_THRESHOLD = 0.5
 
     # The mean and std of the dataset. you can get these using utils.calc_mean_std

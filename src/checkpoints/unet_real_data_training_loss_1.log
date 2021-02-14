@@ -1,0 +1,802 @@
+Epoch: 1 | Iteration number: [10/50] 20% | Training loss: 1.0753137826919557
+Epoch: 1 | Iteration number: [20/50] 40% | Training loss: 1.0167536586523056
+Epoch: 1 | Iteration number: [30/50] 60% | Training loss: 0.9928217371304829
+Epoch: 1 | Iteration number: [40/50] 80% | Training loss: 0.9773720368742943
+
+ End of epoch: 1 | Train Loss: 0.9478399789333344 | Training Time: 52 
+
+ End of epoch: 1 | Eval Loss: 0.9186273983546666 | Evaluating Time: 7 
+Epoch: 2 | Iteration number: [10/50] 20% | Training loss: 1.0050589621067048
+Epoch: 2 | Iteration number: [20/50] 40% | Training loss: 0.956206277012825
+Epoch: 2 | Iteration number: [30/50] 60% | Training loss: 0.9390237053235372
+Epoch: 2 | Iteration number: [40/50] 80% | Training loss: 0.9294202342629433
+
+ End of epoch: 2 | Train Loss: 0.9054393589496612 | Training Time: 15 
+
+ End of epoch: 2 | Eval Loss: 0.8966863410813468 | Evaluating Time: 7 
+Epoch: 3 | Iteration number: [10/50] 20% | Training loss: 0.9872864782810211
+Epoch: 3 | Iteration number: [20/50] 40% | Training loss: 0.9411123305559158
+Epoch: 3 | Iteration number: [30/50] 60% | Training loss: 0.9246580541133881
+Epoch: 3 | Iteration number: [40/50] 80% | Training loss: 0.9157929703593254
+
+ End of epoch: 3 | Train Loss: 0.8925446927547455 | Training Time: 15 
+
+ End of epoch: 3 | Eval Loss: 0.8853745630809239 | Evaluating Time: 7 
+Epoch: 4 | Iteration number: [10/50] 20% | Training loss: 0.9762116849422455
+Epoch: 4 | Iteration number: [20/50] 40% | Training loss: 0.9305975943803787
+Epoch: 4 | Iteration number: [30/50] 60% | Training loss: 0.9144039273262023
+Epoch: 4 | Iteration number: [40/50] 80% | Training loss: 0.9061435893177986
+
+ End of epoch: 4 | Train Loss: 0.8831726562976837 | Training Time: 14 
+
+ End of epoch: 4 | Eval Loss: 0.8786935210227966 | Evaluating Time: 7 
+Epoch: 5 | Iteration number: [10/50] 20% | Training loss: 0.9645102977752685
+Epoch: 5 | Iteration number: [20/50] 40% | Training loss: 0.9198893874883651
+Epoch: 5 | Iteration number: [30/50] 60% | Training loss: 0.9044267912705739
+Epoch: 5 | Iteration number: [40/50] 80% | Training loss: 0.8962071731686592
+
+ End of epoch: 5 | Train Loss: 0.873855277299881 | Training Time: 14 
+
+ End of epoch: 5 | Eval Loss: 0.870293378829956 | Evaluating Time: 7 
+Epoch: 6 | Iteration number: [10/50] 20% | Training loss: 0.9558840155601501
+Epoch: 6 | Iteration number: [20/50] 40% | Training loss: 0.9119432806968689
+Epoch: 6 | Iteration number: [30/50] 60% | Training loss: 0.8965459843476613
+Epoch: 6 | Iteration number: [40/50] 80% | Training loss: 0.8884296312928199
+
+ End of epoch: 6 | Train Loss: 0.8661973571777344 | Training Time: 15 
+
+ End of epoch: 6 | Eval Loss: 0.862022842679705 | Evaluating Time: 7 
+Epoch: 7 | Iteration number: [10/50] 20% | Training loss: 0.9478805601596832
+Epoch: 7 | Iteration number: [20/50] 40% | Training loss: 0.903834056854248
+Epoch: 7 | Iteration number: [30/50] 60% | Training loss: 0.8886861443519593
+Epoch: 7 | Iteration number: [40/50] 80% | Training loss: 0.8806701302528381
+
+ End of epoch: 7 | Train Loss: 0.8585632169246673 | Training Time: 14 
+
+ End of epoch: 7 | Eval Loss: 0.8538115705762591 | Evaluating Time: 7 
+Epoch: 8 | Iteration number: [10/50] 20% | Training loss: 0.9397522330284118
+Epoch: 8 | Iteration number: [20/50] 40% | Training loss: 0.8958747327327728
+Epoch: 8 | Iteration number: [30/50] 60% | Training loss: 0.8809536774953206
+Epoch: 8 | Iteration number: [40/50] 80% | Training loss: 0.8729939252138138
+
+ End of epoch: 8 | Train Loss: 0.8508943593502045 | Training Time: 15 
+
+ End of epoch: 8 | Eval Loss: 0.8460934587887355 | Evaluating Time: 7 
+Epoch: 9 | Iteration number: [10/50] 20% | Training loss: 0.9298854112625122
+Epoch: 9 | Iteration number: [20/50] 40% | Training loss: 0.8872408956289292
+Epoch: 9 | Iteration number: [30/50] 60% | Training loss: 0.8722835779190063
+Epoch: 9 | Iteration number: [40/50] 80% | Training loss: 0.8643603608012199
+
+ End of epoch: 9 | Train Loss: 0.8427462482452392 | Training Time: 14 
+
+ End of epoch: 9 | Eval Loss: 0.8385447519166129 | Evaluating Time: 7 
+Epoch: 10 | Iteration number: [10/50] 20% | Training loss: 0.9217767000198365
+Epoch: 10 | Iteration number: [20/50] 40% | Training loss: 0.8791246920824051
+Epoch: 10 | Iteration number: [30/50] 60% | Training loss: 0.8644877473513285
+Epoch: 10 | Iteration number: [40/50] 80% | Training loss: 0.8567015513777733
+
+ End of epoch: 10 | Train Loss: 0.8349665462970733 | Training Time: 15 
+
+ End of epoch: 10 | Eval Loss: 0.8310524225234985 | Evaluating Time: 7 
+Epoch: 11 | Iteration number: [10/50] 20% | Training loss: 0.9127950251102448
+Epoch: 11 | Iteration number: [20/50] 40% | Training loss: 0.8708535224199295
+Epoch: 11 | Iteration number: [30/50] 60% | Training loss: 0.8562087933222453
+Epoch: 11 | Iteration number: [40/50] 80% | Training loss: 0.8486147746443748
+
+ End of epoch: 11 | Train Loss: 0.8272205698490143 | Training Time: 15 
+
+ End of epoch: 11 | Eval Loss: 0.824899571282523 | Evaluating Time: 7 
+Epoch: 12 | Iteration number: [10/50] 20% | Training loss: 0.9047338187694549
+Epoch: 12 | Iteration number: [20/50] 40% | Training loss: 0.8631739407777786
+Epoch: 12 | Iteration number: [30/50] 60% | Training loss: 0.8487827698389689
+Epoch: 12 | Iteration number: [40/50] 80% | Training loss: 0.8413709551095963
+
+ End of epoch: 12 | Train Loss: 0.820344533920288 | Training Time: 15 
+
+ End of epoch: 12 | Eval Loss: 0.8179253254617963 | Evaluating Time: 7 
+Epoch: 13 | Iteration number: [10/50] 20% | Training loss: 0.8977568686008454
+Epoch: 13 | Iteration number: [20/50] 40% | Training loss: 0.8561306387186051
+Epoch: 13 | Iteration number: [30/50] 60% | Training loss: 0.8418260256449381
+Epoch: 13 | Iteration number: [40/50] 80% | Training loss: 0.8344932228326798
+
+ End of epoch: 13 | Train Loss: 0.8135227167606354 | Training Time: 15 
+
+ End of epoch: 13 | Eval Loss: 0.8089832322938102 | Evaluating Time: 7 
+Epoch: 14 | Iteration number: [10/50] 20% | Training loss: 0.8919942796230316
+Epoch: 14 | Iteration number: [20/50] 40% | Training loss: 0.8507512420415878
+Epoch: 14 | Iteration number: [30/50] 60% | Training loss: 0.8363140940666198
+Epoch: 14 | Iteration number: [40/50] 80% | Training loss: 0.8288168966770172
+
+ End of epoch: 14 | Train Loss: 0.8079512965679169 | Training Time: 15 
+
+ End of epoch: 14 | Eval Loss: 0.8036471009254456 | Evaluating Time: 7 
+Epoch: 15 | Iteration number: [10/50] 20% | Training loss: 0.8844284236431121
+Epoch: 15 | Iteration number: [20/50] 40% | Training loss: 0.8434801310300827
+Epoch: 15 | Iteration number: [30/50] 60% | Training loss: 0.8293493171532949
+Epoch: 15 | Iteration number: [40/50] 80% | Training loss: 0.8219766244292259
+
+ End of epoch: 15 | Train Loss: 0.8014091563224792 | Training Time: 15 
+
+ End of epoch: 15 | Eval Loss: 0.7970990197999137 | Evaluating Time: 7 
+Epoch: 16 | Iteration number: [10/50] 20% | Training loss: 0.8779989004135131
+Epoch: 16 | Iteration number: [20/50] 40% | Training loss: 0.8370726704597473
+Epoch: 16 | Iteration number: [30/50] 60% | Training loss: 0.8232336481412251
+Epoch: 16 | Iteration number: [40/50] 80% | Training loss: 0.8158288896083832
+
+ End of epoch: 16 | Train Loss: 0.7954438710212708 | Training Time: 14 
+
+ End of epoch: 16 | Eval Loss: 0.7915966255324227 | Evaluating Time: 7 
+Epoch: 17 | Iteration number: [10/50] 20% | Training loss: 0.8715949416160583
+Epoch: 17 | Iteration number: [20/50] 40% | Training loss: 0.831297904253006
+Epoch: 17 | Iteration number: [30/50] 60% | Training loss: 0.8175494114557902
+Epoch: 17 | Iteration number: [40/50] 80% | Training loss: 0.8103835195302963
+
+ End of epoch: 17 | Train Loss: 0.7902207100391387 | Training Time: 14 
+
+ End of epoch: 17 | Eval Loss: 0.7873648915972028 | Evaluating Time: 7 
+Epoch: 18 | Iteration number: [10/50] 20% | Training loss: 0.8650777220726014
+Epoch: 18 | Iteration number: [20/50] 40% | Training loss: 0.8254726439714432
+Epoch: 18 | Iteration number: [30/50] 60% | Training loss: 0.8118119875590006
+Epoch: 18 | Iteration number: [40/50] 80% | Training loss: 0.8048972576856613
+
+ End of epoch: 18 | Train Loss: 0.78486860871315 | Training Time: 14 
+
+ End of epoch: 18 | Eval Loss: 0.781295827456883 | Evaluating Time: 5 
+Epoch: 19 | Iteration number: [10/50] 20% | Training loss: 0.860065096616745
+Epoch: 19 | Iteration number: [20/50] 40% | Training loss: 0.8204496830701828
+Epoch: 19 | Iteration number: [30/50] 60% | Training loss: 0.8068943341573079
+Epoch: 19 | Iteration number: [40/50] 80% | Training loss: 0.7997606977820396
+
+ End of epoch: 19 | Train Loss: 0.7798069775104522 | Training Time: 11 
+
+ End of epoch: 19 | Eval Loss: 0.7750779730933053 | Evaluating Time: 5 
+Epoch: 20 | Iteration number: [10/50] 20% | Training loss: 0.8545247912406921
+Epoch: 20 | Iteration number: [20/50] 40% | Training loss: 0.8153209865093232
+Epoch: 20 | Iteration number: [30/50] 60% | Training loss: 0.8019067466259002
+Epoch: 20 | Iteration number: [40/50] 80% | Training loss: 0.7948624670505524
+
+ End of epoch: 20 | Train Loss: 0.7752819907665253 | Training Time: 11 
+
+ End of epoch: 20 | Eval Loss: 0.7720291869980949 | Evaluating Time: 5 
+Epoch: 21 | Iteration number: [10/50] 20% | Training loss: 0.8496476829051971
+Epoch: 21 | Iteration number: [20/50] 40% | Training loss: 0.8104785293340683
+Epoch: 21 | Iteration number: [30/50] 60% | Training loss: 0.7972547352313996
+Epoch: 21 | Iteration number: [40/50] 80% | Training loss: 0.7904080927371979
+
+ End of epoch: 21 | Train Loss: 0.7709859740734101 | Training Time: 11 
+
+ End of epoch: 21 | Eval Loss: 0.767142117023468 | Evaluating Time: 6 
+Epoch: 22 | Iteration number: [10/50] 20% | Training loss: 0.8448797464370728
+Epoch: 22 | Iteration number: [20/50] 40% | Training loss: 0.8064566671848297
+Epoch: 22 | Iteration number: [30/50] 60% | Training loss: 0.7932946105798085
+Epoch: 22 | Iteration number: [40/50] 80% | Training loss: 0.7863953903317451
+
+ End of epoch: 22 | Train Loss: 0.766888496875763 | Training Time: 12 
+
+ End of epoch: 22 | Eval Loss: 0.7644844736371722 | Evaluating Time: 5 
+Epoch: 23 | Iteration number: [10/50] 20% | Training loss: 0.8418182730674744
+Epoch: 23 | Iteration number: [20/50] 40% | Training loss: 0.8028557658195495
+Epoch: 23 | Iteration number: [30/50] 60% | Training loss: 0.789570830265681
+Epoch: 23 | Iteration number: [40/50] 80% | Training loss: 0.7826981365680694
+
+ End of epoch: 23 | Train Loss: 0.7633427250385284 | Training Time: 11 
+
+ End of epoch: 23 | Eval Loss: 0.760389472757067 | Evaluating Time: 5 
+Epoch: 24 | Iteration number: [10/50] 20% | Training loss: 0.8367344498634338
+Epoch: 24 | Iteration number: [20/50] 40% | Training loss: 0.7983758568763732
+Epoch: 24 | Iteration number: [30/50] 60% | Training loss: 0.7851904650529226
+Epoch: 24 | Iteration number: [40/50] 80% | Training loss: 0.7785092785954475
+
+ End of epoch: 24 | Train Loss: 0.7592007207870484 | Training Time: 11 
+
+ End of epoch: 24 | Eval Loss: 0.7561356765883309 | Evaluating Time: 5 
+Epoch: 25 | Iteration number: [10/50] 20% | Training loss: 0.8321130454540253
+Epoch: 25 | Iteration number: [20/50] 40% | Training loss: 0.7941627830266953
+Epoch: 25 | Iteration number: [30/50] 60% | Training loss: 0.7811580697695414
+Epoch: 25 | Iteration number: [40/50] 80% | Training loss: 0.7746591180562973
+
+ End of epoch: 25 | Train Loss: 0.7555871069431305 | Training Time: 11 
+
+ End of epoch: 25 | Eval Loss: 0.7536030411720276 | Evaluating Time: 6 
+Epoch: 26 | Iteration number: [10/50] 20% | Training loss: 0.8285759806632995
+Epoch: 26 | Iteration number: [20/50] 40% | Training loss: 0.7906923174858094
+Epoch: 26 | Iteration number: [30/50] 60% | Training loss: 0.7777056296666464
+Epoch: 26 | Iteration number: [40/50] 80% | Training loss: 0.771113058924675
+
+ End of epoch: 26 | Train Loss: 0.75218594789505 | Training Time: 11 
+
+ End of epoch: 26 | Eval Loss: 0.7513928668839591 | Evaluating Time: 5 
+Epoch: 27 | Iteration number: [10/50] 20% | Training loss: 0.8252789855003357
+Epoch: 27 | Iteration number: [20/50] 40% | Training loss: 0.7874825954437256
+Epoch: 27 | Iteration number: [30/50] 60% | Training loss: 0.7746644635995229
+Epoch: 27 | Iteration number: [40/50] 80% | Training loss: 0.7680436223745346
+
+ End of epoch: 27 | Train Loss: 0.7490874826908112 | Training Time: 11 
+
+ End of epoch: 27 | Eval Loss: 0.7474604759897504 | Evaluating Time: 4 
+Epoch: 28 | Iteration number: [10/50] 20% | Training loss: 0.8216337323188782
+Epoch: 28 | Iteration number: [20/50] 40% | Training loss: 0.7841114938259125
+Epoch: 28 | Iteration number: [30/50] 60% | Training loss: 0.7713465789953867
+Epoch: 28 | Iteration number: [40/50] 80% | Training loss: 0.7649401247501373
+
+ End of epoch: 28 | Train Loss: 0.746068481206894 | Training Time: 11 
+
+ End of epoch: 28 | Eval Loss: 0.7450153061321804 | Evaluating Time: 5 
+Epoch: 29 | Iteration number: [10/50] 20% | Training loss: 0.8188351452350616
+Epoch: 29 | Iteration number: [20/50] 40% | Training loss: 0.7811610966920852
+Epoch: 29 | Iteration number: [30/50] 60% | Training loss: 0.7684661944707235
+Epoch: 29 | Iteration number: [40/50] 80% | Training loss: 0.7620680913329124
+
+ End of epoch: 29 | Train Loss: 0.7432577204704285 | Training Time: 12 
+
+ End of epoch: 29 | Eval Loss: 0.7409612621579852 | Evaluating Time: 5 
+Epoch: 30 | Iteration number: [10/50] 20% | Training loss: 0.8161413669586182
+Epoch: 30 | Iteration number: [20/50] 40% | Training loss: 0.7787726938724517
+Epoch: 30 | Iteration number: [30/50] 60% | Training loss: 0.7659924805164338
+Epoch: 30 | Iteration number: [40/50] 80% | Training loss: 0.7595802798867226
+
+ End of epoch: 30 | Train Loss: 0.7407688081264496 | Training Time: 11 
+
+ End of epoch: 30 | Eval Loss: 0.7385320152555194 | Evaluating Time: 5 
+Epoch: 31 | Iteration number: [10/50] 20% | Training loss: 0.8127459168434144
+Epoch: 31 | Iteration number: [20/50] 40% | Training loss: 0.7756715387105941
+Epoch: 31 | Iteration number: [30/50] 60% | Training loss: 0.7632619380950928
+Epoch: 31 | Iteration number: [40/50] 80% | Training loss: 0.7568844765424728
+
+ End of epoch: 31 | Train Loss: 0.7380346655845642 | Training Time: 11 
+
+ End of epoch: 31 | Eval Loss: 0.7361149021557399 | Evaluating Time: 5 
+Epoch: 32 | Iteration number: [10/50] 20% | Training loss: 0.8102438151836395
+Epoch: 32 | Iteration number: [20/50] 40% | Training loss: 0.773206689953804
+Epoch: 32 | Iteration number: [30/50] 60% | Training loss: 0.7606203178564708
+Epoch: 32 | Iteration number: [40/50] 80% | Training loss: 0.754481528699398
+
+ End of epoch: 32 | Train Loss: 0.7358778488636016 | Training Time: 11 
+
+ End of epoch: 32 | Eval Loss: 0.734413572720119 | Evaluating Time: 5 
+Epoch: 33 | Iteration number: [10/50] 20% | Training loss: 0.8078700840473175
+Epoch: 33 | Iteration number: [20/50] 40% | Training loss: 0.771128362417221
+Epoch: 33 | Iteration number: [30/50] 60% | Training loss: 0.7585379938284557
+Epoch: 33 | Iteration number: [40/50] 80% | Training loss: 0.7522755116224289
+
+ End of epoch: 33 | Train Loss: 0.7337215185165405 | Training Time: 11 
+
+ End of epoch: 33 | Eval Loss: 0.7311890465872628 | Evaluating Time: 5 
+Epoch: 34 | Iteration number: [10/50] 20% | Training loss: 0.8056228816509247
+Epoch: 34 | Iteration number: [20/50] 40% | Training loss: 0.7687907576560974
+Epoch: 34 | Iteration number: [30/50] 60% | Training loss: 0.7563789586226145
+Epoch: 34 | Iteration number: [40/50] 80% | Training loss: 0.7500429332256318
+
+ End of epoch: 34 | Train Loss: 0.7315576255321503 | Training Time: 11 
+
+ End of epoch: 34 | Eval Loss: 0.7304040193557739 | Evaluating Time: 5 
+Epoch: 35 | Iteration number: [10/50] 20% | Training loss: 0.8025976181030273
+Epoch: 35 | Iteration number: [20/50] 40% | Training loss: 0.7663336902856827
+Epoch: 35 | Iteration number: [30/50] 60% | Training loss: 0.7543209334214528
+Epoch: 35 | Iteration number: [40/50] 80% | Training loss: 0.7482025861740113
+
+ End of epoch: 35 | Train Loss: 0.7297626483440399 | Training Time: 11 
+
+ End of epoch: 35 | Eval Loss: 0.7274583748408726 | Evaluating Time: 5 
+Epoch: 36 | Iteration number: [10/50] 20% | Training loss: 0.8015108227729797
+Epoch: 36 | Iteration number: [20/50] 40% | Training loss: 0.7648046165704727
+Epoch: 36 | Iteration number: [30/50] 60% | Training loss: 0.7524721841017405
+Epoch: 36 | Iteration number: [40/50] 80% | Training loss: 0.746213412284851
+
+ End of epoch: 36 | Train Loss: 0.7278446900844574 | Training Time: 11 
+
+ End of epoch: 36 | Eval Loss: 0.7256203719547817 | Evaluating Time: 5 
+Epoch: 37 | Iteration number: [10/50] 20% | Training loss: 0.7996759593486786
+Epoch: 37 | Iteration number: [20/50] 40% | Training loss: 0.7631114393472671
+Epoch: 37 | Iteration number: [30/50] 60% | Training loss: 0.7505792796611785
+Epoch: 37 | Iteration number: [40/50] 80% | Training loss: 0.7442543163895607
+
+ End of epoch: 37 | Train Loss: 0.7259711825847626 | Training Time: 11 
+
+ End of epoch: 37 | Eval Loss: 0.7241619740213666 | Evaluating Time: 4 
+Epoch: 38 | Iteration number: [10/50] 20% | Training loss: 0.7974160373210907
+Epoch: 38 | Iteration number: [20/50] 40% | Training loss: 0.7611040979623794
+Epoch: 38 | Iteration number: [30/50] 60% | Training loss: 0.7487392763296763
+Epoch: 38 | Iteration number: [40/50] 80% | Training loss: 0.7426049277186394
+
+ End of epoch: 38 | Train Loss: 0.7243715894222259 | Training Time: 13 
+
+ End of epoch: 38 | Eval Loss: 0.7236252512250628 | Evaluating Time: 7 
+Epoch: 39 | Iteration number: [10/50] 20% | Training loss: 0.7963031828403473
+Epoch: 39 | Iteration number: [20/50] 40% | Training loss: 0.7598451137542724
+Epoch: 39 | Iteration number: [30/50] 60% | Training loss: 0.7476572791735331
+Epoch: 39 | Iteration number: [40/50] 80% | Training loss: 0.7413021296262741
+
+ End of epoch: 39 | Train Loss: 0.7230864953994751 | Training Time: 14 
+
+ End of epoch: 39 | Eval Loss: 0.7216726200921195 | Evaluating Time: 7 
+Epoch: 40 | Iteration number: [10/50] 20% | Training loss: 0.7938818991184234
+Epoch: 40 | Iteration number: [20/50] 40% | Training loss: 0.7579028367996216
+Epoch: 40 | Iteration number: [30/50] 60% | Training loss: 0.7457113623619079
+Epoch: 40 | Iteration number: [40/50] 80% | Training loss: 0.7395578190684319
+
+ End of epoch: 40 | Train Loss: 0.7214096844196319 | Training Time: 15 
+
+ End of epoch: 40 | Eval Loss: 0.7193290335791451 | Evaluating Time: 7 
+Epoch: 41 | Iteration number: [10/50] 20% | Training loss: 0.7928892254829407
+Epoch: 41 | Iteration number: [20/50] 40% | Training loss: 0.7566517889499664
+Epoch: 41 | Iteration number: [30/50] 60% | Training loss: 0.7443970799446106
+Epoch: 41 | Iteration number: [40/50] 80% | Training loss: 0.7381210267543793
+
+ End of epoch: 41 | Train Loss: 0.719980251789093 | Training Time: 14 
+
+ End of epoch: 41 | Eval Loss: 0.7185777000018528 | Evaluating Time: 7 
+Epoch: 42 | Iteration number: [10/50] 20% | Training loss: 0.7913670837879181
+Epoch: 42 | Iteration number: [20/50] 40% | Training loss: 0.7552444636821747
+Epoch: 42 | Iteration number: [30/50] 60% | Training loss: 0.7429881115754445
+Epoch: 42 | Iteration number: [40/50] 80% | Training loss: 0.7368840619921684
+
+ End of epoch: 42 | Train Loss: 0.7186753666400909 | Training Time: 15 
+
+ End of epoch: 42 | Eval Loss: 0.716448894568852 | Evaluating Time: 7 
+Epoch: 43 | Iteration number: [10/50] 20% | Training loss: 0.7892622590065003
+Epoch: 43 | Iteration number: [20/50] 40% | Training loss: 0.7530401915311813
+Epoch: 43 | Iteration number: [30/50] 60% | Training loss: 0.7412322580814361
+Epoch: 43 | Iteration number: [40/50] 80% | Training loss: 0.7353512331843376
+
+ End of epoch: 43 | Train Loss: 0.7173954844474792 | Training Time: 14 
+
+ End of epoch: 43 | Eval Loss: 0.7159990923745292 | Evaluating Time: 7 
+Epoch: 44 | Iteration number: [10/50] 20% | Training loss: 0.7881407082080841
+Epoch: 44 | Iteration number: [20/50] 40% | Training loss: 0.7522027641534805
+Epoch: 44 | Iteration number: [30/50] 60% | Training loss: 0.7403768499692281
+Epoch: 44 | Iteration number: [40/50] 80% | Training loss: 0.7342854738235474
+
+ End of epoch: 44 | Train Loss: 0.7161745548248291 | Training Time: 14 
+
+ End of epoch: 44 | Eval Loss: 0.7143946715763637 | Evaluating Time: 7 
+Epoch: 45 | Iteration number: [10/50] 20% | Training loss: 0.7869999766349792
+Epoch: 45 | Iteration number: [20/50] 40% | Training loss: 0.7507919251918793
+Epoch: 45 | Iteration number: [30/50] 60% | Training loss: 0.7388486862182617
+Epoch: 45 | Iteration number: [40/50] 80% | Training loss: 0.7327310547232628
+
+ End of epoch: 45 | Train Loss: 0.7149819242954254 | Training Time: 15 
+
+ End of epoch: 45 | Eval Loss: 0.7135925974164691 | Evaluating Time: 7 
+Epoch: 46 | Iteration number: [10/50] 20% | Training loss: 0.7861246168613434
+Epoch: 46 | Iteration number: [20/50] 40% | Training loss: 0.7498354345560074
+Epoch: 46 | Iteration number: [30/50] 60% | Training loss: 0.7378871838251749
+Epoch: 46 | Iteration number: [40/50] 80% | Training loss: 0.7317635551095009
+
+ End of epoch: 46 | Train Loss: 0.7139054036140442 | Training Time: 15 
+
+ End of epoch: 46 | Eval Loss: 0.7125593934740339 | Evaluating Time: 7 
+Epoch: 47 | Iteration number: [10/50] 20% | Training loss: 0.7849134862422943
+Epoch: 47 | Iteration number: [20/50] 40% | Training loss: 0.7493156045675278
+Epoch: 47 | Iteration number: [30/50] 60% | Training loss: 0.7372688472270965
+Epoch: 47 | Iteration number: [40/50] 80% | Training loss: 0.731217285990715
+
+ End of epoch: 47 | Train Loss: 0.7131939923763275 | Training Time: 15 
+
+ End of epoch: 47 | Eval Loss: 0.7126088568142482 | Evaluating Time: 7 
+Epoch: 48 | Iteration number: [10/50] 20% | Training loss: 0.7847856819629669
+Epoch: 48 | Iteration number: [20/50] 40% | Training loss: 0.7487084239721298
+Epoch: 48 | Iteration number: [30/50] 60% | Training loss: 0.7367153525352478
+Epoch: 48 | Iteration number: [40/50] 80% | Training loss: 0.7306461498141289
+
+ End of epoch: 48 | Train Loss: 0.7126386094093323 | Training Time: 15 
+
+ End of epoch: 48 | Eval Loss: 0.7116859895842416 | Evaluating Time: 7 
+Epoch: 49 | Iteration number: [10/50] 20% | Training loss: 0.7830940544605255
+Epoch: 49 | Iteration number: [20/50] 40% | Training loss: 0.7473739147186279
+Epoch: 49 | Iteration number: [30/50] 60% | Training loss: 0.735374641418457
+Epoch: 49 | Iteration number: [40/50] 80% | Training loss: 0.7292944043874741
+
+ End of epoch: 49 | Train Loss: 0.7114948749542236 | Training Time: 15 
+
+ End of epoch: 49 | Eval Loss: 0.7094872082982745 | Evaluating Time: 7 
+Epoch: 50 | Iteration number: [10/50] 20% | Training loss: 0.7821469366550445
+Epoch: 50 | Iteration number: [20/50] 40% | Training loss: 0.7464777559041977
+Epoch: 50 | Iteration number: [30/50] 60% | Training loss: 0.7344429135322571
+Epoch: 50 | Iteration number: [40/50] 80% | Training loss: 0.7284172430634499
+
+ End of epoch: 50 | Train Loss: 0.7105305600166321 | Training Time: 14 
+
+ End of epoch: 50 | Eval Loss: 0.7091137596539089 | Evaluating Time: 6 
+Epoch: 51 | Iteration number: [10/50] 20% | Training loss: 0.7812022209167481
+Epoch: 51 | Iteration number: [20/50] 40% | Training loss: 0.745406123995781
+Epoch: 51 | Iteration number: [30/50] 60% | Training loss: 0.7333294312159221
+Epoch: 51 | Iteration number: [40/50] 80% | Training loss: 0.727273990213871
+
+ End of epoch: 51 | Train Loss: 0.7095744240283967 | Training Time: 14 
+
+ End of epoch: 51 | Eval Loss: 0.70840151820864 | Evaluating Time: 7 
+Epoch: 52 | Iteration number: [10/50] 20% | Training loss: 0.7802310228347779
+Epoch: 52 | Iteration number: [20/50] 40% | Training loss: 0.7444160938262939
+Epoch: 52 | Iteration number: [30/50] 60% | Training loss: 0.7325562516848246
+Epoch: 52 | Iteration number: [40/50] 80% | Training loss: 0.7266183897852898
+
+ End of epoch: 52 | Train Loss: 0.7086926758289337 | Training Time: 15 
+
+ End of epoch: 52 | Eval Loss: 0.7073728357042585 | Evaluating Time: 7 
+Epoch: 53 | Iteration number: [10/50] 20% | Training loss: 0.7786053061485291
+Epoch: 53 | Iteration number: [20/50] 40% | Training loss: 0.7433694839477539
+Epoch: 53 | Iteration number: [30/50] 60% | Training loss: 0.7314253966013591
+Epoch: 53 | Iteration number: [40/50] 80% | Training loss: 0.7254570111632347
+
+ End of epoch: 53 | Train Loss: 0.7078526091575622 | Training Time: 15 
+
+ End of epoch: 53 | Eval Loss: 0.7069622107914516 | Evaluating Time: 7 
+Epoch: 54 | Iteration number: [10/50] 20% | Training loss: 0.7784523248672486
+Epoch: 54 | Iteration number: [20/50] 40% | Training loss: 0.7427235037088394
+Epoch: 54 | Iteration number: [30/50] 60% | Training loss: 0.7307882527510325
+Epoch: 54 | Iteration number: [40/50] 80% | Training loss: 0.7248313248157501
+
+ End of epoch: 54 | Train Loss: 0.7072573792934418 | Training Time: 15 
+
+ End of epoch: 54 | Eval Loss: 0.7061464445931571 | Evaluating Time: 7 
+Epoch: 55 | Iteration number: [10/50] 20% | Training loss: 0.7778430998325347
+Epoch: 55 | Iteration number: [20/50] 40% | Training loss: 0.7423166394233703
+Epoch: 55 | Iteration number: [30/50] 60% | Training loss: 0.7305593311786651
+Epoch: 55 | Iteration number: [40/50] 80% | Training loss: 0.724476782977581
+
+ End of epoch: 55 | Train Loss: 0.7067713558673858 | Training Time: 15 
+
+ End of epoch: 55 | Eval Loss: 0.7052772300583976 | Evaluating Time: 7 
+Epoch: 56 | Iteration number: [10/50] 20% | Training loss: 0.7770185112953186
+Epoch: 56 | Iteration number: [20/50] 40% | Training loss: 0.7414141058921814
+Epoch: 56 | Iteration number: [30/50] 60% | Training loss: 0.7296312928199769
+Epoch: 56 | Iteration number: [40/50] 80% | Training loss: 0.7235079020261764
+
+ End of epoch: 56 | Train Loss: 0.7058637595176697 | Training Time: 15 
+
+ End of epoch: 56 | Eval Loss: 0.7040875979832241 | Evaluating Time: 7 
+Epoch: 57 | Iteration number: [10/50] 20% | Training loss: 0.775835394859314
+Epoch: 57 | Iteration number: [20/50] 40% | Training loss: 0.7404253482818604
+Epoch: 57 | Iteration number: [30/50] 60% | Training loss: 0.7286504129568736
+Epoch: 57 | Iteration number: [40/50] 80% | Training loss: 0.7227989420294761
+
+ End of epoch: 57 | Train Loss: 0.7050727784633637 | Training Time: 15 
+
+ End of epoch: 57 | Eval Loss: 0.7044968179294041 | Evaluating Time: 7 
+Epoch: 58 | Iteration number: [10/50] 20% | Training loss: 0.7754695594310761
+Epoch: 58 | Iteration number: [20/50] 40% | Training loss: 0.7399691432714463
+Epoch: 58 | Iteration number: [30/50] 60% | Training loss: 0.7282173256079356
+Epoch: 58 | Iteration number: [40/50] 80% | Training loss: 0.7222849488258362
+
+ End of epoch: 58 | Train Loss: 0.70454150557518 | Training Time: 15 
+
+ End of epoch: 58 | Eval Loss: 0.7033932719911847 | Evaluating Time: 7 
+Epoch: 59 | Iteration number: [10/50] 20% | Training loss: 0.774629557132721
+Epoch: 59 | Iteration number: [20/50] 40% | Training loss: 0.7392536848783493
+Epoch: 59 | Iteration number: [30/50] 60% | Training loss: 0.7274067302544912
+Epoch: 59 | Iteration number: [40/50] 80% | Training loss: 0.7215401649475097
+
+ End of epoch: 59 | Train Loss: 0.7039005887508393 | Training Time: 15 
+
+ End of epoch: 59 | Eval Loss: 0.7027926785605294 | Evaluating Time: 7 
+Epoch: 60 | Iteration number: [10/50] 20% | Training loss: 0.7741338551044464
+Epoch: 60 | Iteration number: [20/50] 40% | Training loss: 0.7390005975961685
+Epoch: 60 | Iteration number: [30/50] 60% | Training loss: 0.7271215697129567
+Epoch: 60 | Iteration number: [40/50] 80% | Training loss: 0.7210492193698883
+
+ End of epoch: 60 | Train Loss: 0.7034523344039917 | Training Time: 15 
+
+ End of epoch: 60 | Eval Loss: 0.7027878505843026 | Evaluating Time: 7 
+Epoch: 61 | Iteration number: [10/50] 20% | Training loss: 0.7733428001403808
+Epoch: 61 | Iteration number: [20/50] 40% | Training loss: 0.7382060170173645
+Epoch: 61 | Iteration number: [30/50] 60% | Training loss: 0.7262793739636739
+Epoch: 61 | Iteration number: [40/50] 80% | Training loss: 0.7205681413412094
+
+ End of epoch: 61 | Train Loss: 0.7030219900608062 | Training Time: 15 
+
+ End of epoch: 61 | Eval Loss: 0.702353664806911 | Evaluating Time: 7 
+Epoch: 62 | Iteration number: [10/50] 20% | Training loss: 0.7732061147689819
+Epoch: 62 | Iteration number: [20/50] 40% | Training loss: 0.7378976553678512
+Epoch: 62 | Iteration number: [30/50] 60% | Training loss: 0.7261696477731069
+Epoch: 62 | Iteration number: [40/50] 80% | Training loss: 0.7203550055623055
+
+ End of epoch: 62 | Train Loss: 0.7026805293560028 | Training Time: 15 
+
+ End of epoch: 62 | Eval Loss: 0.7022924848965236 | Evaluating Time: 7 
+Epoch: 63 | Iteration number: [10/50] 20% | Training loss: 0.7724500596523285
+Epoch: 63 | Iteration number: [20/50] 40% | Training loss: 0.7375054627656936
+Epoch: 63 | Iteration number: [30/50] 60% | Training loss: 0.7256923735141754
+Epoch: 63 | Iteration number: [40/50] 80% | Training loss: 0.7197796925902367
+
+ End of epoch: 63 | Train Loss: 0.7022312533855438 | Training Time: 14 
+
+ End of epoch: 63 | Eval Loss: 0.7012514301708767 | Evaluating Time: 6 
+Epoch: 64 | Iteration number: [10/50] 20% | Training loss: 0.7720950245857239
+Epoch: 64 | Iteration number: [20/50] 40% | Training loss: 0.7371580481529236
+Epoch: 64 | Iteration number: [30/50] 60% | Training loss: 0.7252939800421397
+Epoch: 64 | Iteration number: [40/50] 80% | Training loss: 0.7192969620227814
+
+ End of epoch: 64 | Train Loss: 0.7017350244522095 | Training Time: 14 
+
+ End of epoch: 64 | Eval Loss: 0.7012955461229596 | Evaluating Time: 7 
+Epoch: 65 | Iteration number: [10/50] 20% | Training loss: 0.771675419807434
+Epoch: 65 | Iteration number: [20/50] 40% | Training loss: 0.7366020888090133
+Epoch: 65 | Iteration number: [30/50] 60% | Training loss: 0.7247885048389435
+Epoch: 65 | Iteration number: [40/50] 80% | Training loss: 0.7187925219535828
+
+ End of epoch: 65 | Train Loss: 0.7012011790275574 | Training Time: 14 
+
+ End of epoch: 65 | Eval Loss: 0.7004542010171073 | Evaluating Time: 7 
+Epoch: 66 | Iteration number: [10/50] 20% | Training loss: 0.7710572719573975
+Epoch: 66 | Iteration number: [20/50] 40% | Training loss: 0.7359061121940613
+Epoch: 66 | Iteration number: [30/50] 60% | Training loss: 0.7241397003332773
+Epoch: 66 | Iteration number: [40/50] 80% | Training loss: 0.7183859303593636
+
+ End of epoch: 66 | Train Loss: 0.7008281087875367 | Training Time: 15 
+
+ End of epoch: 66 | Eval Loss: 0.7007616928645543 | Evaluating Time: 7 
+Epoch: 67 | Iteration number: [10/50] 20% | Training loss: 0.7701949298381805
+Epoch: 67 | Iteration number: [20/50] 40% | Training loss: 0.7353947550058365
+Epoch: 67 | Iteration number: [30/50] 60% | Training loss: 0.7237755278746287
+Epoch: 67 | Iteration number: [40/50] 80% | Training loss: 0.7179097831249237
+
+ End of epoch: 67 | Train Loss: 0.7003579545021057 | Training Time: 15 
+
+ End of epoch: 67 | Eval Loss: 0.6997403757912772 | Evaluating Time: 7 
+Epoch: 68 | Iteration number: [10/50] 20% | Training loss: 0.7702494204044342
+Epoch: 68 | Iteration number: [20/50] 40% | Training loss: 0.7351177930831909
+Epoch: 68 | Iteration number: [30/50] 60% | Training loss: 0.7234688560167949
+Epoch: 68 | Iteration number: [40/50] 80% | Training loss: 0.7174334704875946
+
+ End of epoch: 68 | Train Loss: 0.6998949015140533 | Training Time: 15 
+
+ End of epoch: 68 | Eval Loss: 0.6993095704487392 | Evaluating Time: 7 
+Epoch: 69 | Iteration number: [10/50] 20% | Training loss: 0.7696916401386261
+Epoch: 69 | Iteration number: [20/50] 40% | Training loss: 0.7347890079021454
+Epoch: 69 | Iteration number: [30/50] 60% | Training loss: 0.7228387276331584
+Epoch: 69 | Iteration number: [40/50] 80% | Training loss: 0.7170110821723938
+
+ End of epoch: 69 | Train Loss: 0.6995350325107574 | Training Time: 15 
+
+ End of epoch: 69 | Eval Loss: 0.698548708643232 | Evaluating Time: 7 
+Epoch: 70 | Iteration number: [10/50] 20% | Training loss: 0.7694135308265686
+Epoch: 70 | Iteration number: [20/50] 40% | Training loss: 0.7345362842082978
+Epoch: 70 | Iteration number: [30/50] 60% | Training loss: 0.7227801740169525
+Epoch: 70 | Iteration number: [40/50] 80% | Training loss: 0.716792120039463
+
+ End of epoch: 70 | Train Loss: 0.6993255138397216 | Training Time: 15 
+
+ End of epoch: 70 | Eval Loss: 0.6989427038601467 | Evaluating Time: 7 
+Epoch: 71 | Iteration number: [10/50] 20% | Training loss: 0.7691591084003448
+Epoch: 71 | Iteration number: [20/50] 40% | Training loss: 0.7345162153244018
+Epoch: 71 | Iteration number: [30/50] 60% | Training loss: 0.722703198591868
+Epoch: 71 | Iteration number: [40/50] 80% | Training loss: 0.7167146563529968
+
+ End of epoch: 71 | Train Loss: 0.6992440819740295 | Training Time: 15 
+
+ End of epoch: 71 | Eval Loss: 0.6984929186957223 | Evaluating Time: 7 
+Epoch: 72 | Iteration number: [10/50] 20% | Training loss: 0.7690082848072052
+Epoch: 72 | Iteration number: [20/50] 40% | Training loss: 0.7337407946586609
+Epoch: 72 | Iteration number: [30/50] 60% | Training loss: 0.7220412691434225
+Epoch: 72 | Iteration number: [40/50] 80% | Training loss: 0.7160507544875145
+
+ End of epoch: 72 | Train Loss: 0.6985863554477691 | Training Time: 15 
+
+ End of epoch: 72 | Eval Loss: 0.6981808372906276 | Evaluating Time: 7 
+Epoch: 73 | Iteration number: [10/50] 20% | Training loss: 0.7681589484214782
+Epoch: 73 | Iteration number: [20/50] 40% | Training loss: 0.7329785883426666
+Epoch: 73 | Iteration number: [30/50] 60% | Training loss: 0.7213843961556753
+Epoch: 73 | Iteration number: [40/50] 80% | Training loss: 0.7156328439712525
+
+ End of epoch: 73 | Train Loss: 0.6981837189197541 | Training Time: 15 
+
+ End of epoch: 73 | Eval Loss: 0.6979852574212211 | Evaluating Time: 7 
+Epoch: 74 | Iteration number: [10/50] 20% | Training loss: 0.7676828265190124
+Epoch: 74 | Iteration number: [20/50] 40% | Training loss: 0.7328796565532685
+Epoch: 74 | Iteration number: [30/50] 60% | Training loss: 0.7212296724319458
+Epoch: 74 | Iteration number: [40/50] 80% | Training loss: 0.7153479158878326
+
+ End of epoch: 74 | Train Loss: 0.6979507732391358 | Training Time: 15 
+
+ End of epoch: 74 | Eval Loss: 0.6977047920227051 | Evaluating Time: 7 
+Epoch: 75 | Iteration number: [10/50] 20% | Training loss: 0.7674234449863434
+Epoch: 75 | Iteration number: [20/50] 40% | Training loss: 0.7327696144580841
+Epoch: 75 | Iteration number: [30/50] 60% | Training loss: 0.721007517973582
+Epoch: 75 | Iteration number: [40/50] 80% | Training loss: 0.715154142677784
+
+ End of epoch: 75 | Train Loss: 0.6976106286048889 | Training Time: 15 
+
+ End of epoch: 75 | Eval Loss: 0.6969263213021415 | Evaluating Time: 7 
+Epoch: 76 | Iteration number: [10/50] 20% | Training loss: 0.7673530757427216
+Epoch: 76 | Iteration number: [20/50] 40% | Training loss: 0.7323818862438202
+Epoch: 76 | Iteration number: [30/50] 60% | Training loss: 0.720724751551946
+Epoch: 76 | Iteration number: [40/50] 80% | Training loss: 0.7148501306772232
+
+ End of epoch: 76 | Train Loss: 0.6974266612529755 | Training Time: 14 
+
+ End of epoch: 76 | Eval Loss: 0.6969877566610064 | Evaluating Time: 6 
+Epoch: 77 | Iteration number: [10/50] 20% | Training loss: 0.766959685087204
+Epoch: 77 | Iteration number: [20/50] 40% | Training loss: 0.7319658041000366
+Epoch: 77 | Iteration number: [30/50] 60% | Training loss: 0.7204414129257202
+Epoch: 77 | Iteration number: [40/50] 80% | Training loss: 0.7147375866770744
+
+ End of epoch: 77 | Train Loss: 0.6971300232410431 | Training Time: 14 
+
+ End of epoch: 77 | Eval Loss: 0.6965926800455365 | Evaluating Time: 7 
+Epoch: 78 | Iteration number: [10/50] 20% | Training loss: 0.7665112316608429
+Epoch: 78 | Iteration number: [20/50] 40% | Training loss: 0.731791540980339
+Epoch: 78 | Iteration number: [30/50] 60% | Training loss: 0.7201287825902303
+Epoch: 78 | Iteration number: [40/50] 80% | Training loss: 0.7143024414777756
+
+ End of epoch: 78 | Train Loss: 0.6968653106689453 | Training Time: 15 
+
+ End of epoch: 78 | Eval Loss: 0.6962929197720119 | Evaluating Time: 7 
+Epoch: 79 | Iteration number: [10/50] 20% | Training loss: 0.766250342130661
+Epoch: 79 | Iteration number: [20/50] 40% | Training loss: 0.7313686072826385
+Epoch: 79 | Iteration number: [30/50] 60% | Training loss: 0.7198018153508504
+Epoch: 79 | Iteration number: [40/50] 80% | Training loss: 0.7140252083539963
+
+ End of epoch: 79 | Train Loss: 0.6966951155662536 | Training Time: 15 
+
+ End of epoch: 79 | Eval Loss: 0.6965522680963788 | Evaluating Time: 7 
+Epoch: 80 | Iteration number: [10/50] 20% | Training loss: 0.7667313098907471
+Epoch: 80 | Iteration number: [20/50] 40% | Training loss: 0.7315305769443512
+Epoch: 80 | Iteration number: [30/50] 60% | Training loss: 0.7199276208877563
+Epoch: 80 | Iteration number: [40/50] 80% | Training loss: 0.7140089318156242
+
+ End of epoch: 80 | Train Loss: 0.6965008664131165 | Training Time: 15 
+
+ End of epoch: 80 | Eval Loss: 0.6957717878477914 | Evaluating Time: 7 
+Epoch: 81 | Iteration number: [10/50] 20% | Training loss: 0.7663360059261322
+Epoch: 81 | Iteration number: [20/50] 40% | Training loss: 0.7312044650316238
+Epoch: 81 | Iteration number: [30/50] 60% | Training loss: 0.7195081770420074
+Epoch: 81 | Iteration number: [40/50] 80% | Training loss: 0.7138031050562859
+
+ End of epoch: 81 | Train Loss: 0.6963343834877014 | Training Time: 15 
+
+ End of epoch: 81 | Eval Loss: 0.695785573550633 | Evaluating Time: 7 
+Epoch: 82 | Iteration number: [10/50] 20% | Training loss: 0.7657730042934418
+Epoch: 82 | Iteration number: [20/50] 40% | Training loss: 0.7309704095125198
+Epoch: 82 | Iteration number: [30/50] 60% | Training loss: 0.7192372838656108
+Epoch: 82 | Iteration number: [40/50] 80% | Training loss: 0.7134105384349823
+
+ End of epoch: 82 | Train Loss: 0.6959652900695801 | Training Time: 15 
+
+ End of epoch: 82 | Eval Loss: 0.6953631213733128 | Evaluating Time: 7 
+Epoch: 83 | Iteration number: [10/50] 20% | Training loss: 0.7650396287441253
+Epoch: 83 | Iteration number: [20/50] 40% | Training loss: 0.7305838286876678
+Epoch: 83 | Iteration number: [30/50] 60% | Training loss: 0.7189997971057892
+Epoch: 83 | Iteration number: [40/50] 80% | Training loss: 0.7132087245583534
+
+ End of epoch: 83 | Train Loss: 0.695745701789856 | Training Time: 15 
+
+ End of epoch: 83 | Eval Loss: 0.6954034652028765 | Evaluating Time: 7 
+Epoch: 84 | Iteration number: [10/50] 20% | Training loss: 0.7647868037223816
+Epoch: 84 | Iteration number: [20/50] 40% | Training loss: 0.7302643686532975
+Epoch: 84 | Iteration number: [30/50] 60% | Training loss: 0.7188413818677266
+Epoch: 84 | Iteration number: [40/50] 80% | Training loss: 0.7130234748125076
+
+ End of epoch: 84 | Train Loss: 0.6955239045619964 | Training Time: 15 
+
+ End of epoch: 84 | Eval Loss: 0.6950083460126605 | Evaluating Time: 7 
+Epoch: 85 | Iteration number: [10/50] 20% | Training loss: 0.7650220513343811
+Epoch: 85 | Iteration number: [20/50] 40% | Training loss: 0.730126878619194
+Epoch: 85 | Iteration number: [30/50] 60% | Training loss: 0.7186139007409413
+Epoch: 85 | Iteration number: [40/50] 80% | Training loss: 0.7127586752176285
+
+ End of epoch: 85 | Train Loss: 0.6954333984851837 | Training Time: 15 
+
+ End of epoch: 85 | Eval Loss: 0.6946383374077933 | Evaluating Time: 7 
+Epoch: 86 | Iteration number: [10/50] 20% | Training loss: 0.7650369942188263
+Epoch: 86 | Iteration number: [20/50] 40% | Training loss: 0.7300578624010086
+Epoch: 86 | Iteration number: [30/50] 60% | Training loss: 0.7185610453287761
+Epoch: 86 | Iteration number: [40/50] 80% | Training loss: 0.7127061754465103
+
+ End of epoch: 86 | Train Loss: 0.6951997518539429 | Training Time: 15 
+
+ End of epoch: 86 | Eval Loss: 0.6950044887406486 | Evaluating Time: 7 
+Epoch: 87 | Iteration number: [10/50] 20% | Training loss: 0.7643380224704742
+Epoch: 87 | Iteration number: [20/50] 40% | Training loss: 0.7297069102525711
+Epoch: 87 | Iteration number: [30/50] 60% | Training loss: 0.7181422690550486
+Epoch: 87 | Iteration number: [40/50] 80% | Training loss: 0.7123819380998612
+
+ End of epoch: 87 | Train Loss: 0.6950655019283295 | Training Time: 15 
+
+ End of epoch: 87 | Eval Loss: 0.6947868296078273 | Evaluating Time: 7 
+Epoch: 88 | Iteration number: [10/50] 20% | Training loss: 0.7640726923942566
+Epoch: 88 | Iteration number: [20/50] 40% | Training loss: 0.7296262621879578
+Epoch: 88 | Iteration number: [30/50] 60% | Training loss: 0.7179809411366781
+Epoch: 88 | Iteration number: [40/50] 80% | Training loss: 0.7121931672096252
+
+ End of epoch: 88 | Train Loss: 0.6949105584621429 | Training Time: 15 
+
+ End of epoch: 88 | Eval Loss: 0.6946321896144322 | Evaluating Time: 7 
+Epoch: 89 | Iteration number: [10/50] 20% | Training loss: 0.7643990397453309
+Epoch: 89 | Iteration number: [20/50] 40% | Training loss: 0.7295557618141174
+Epoch: 89 | Iteration number: [30/50] 60% | Training loss: 0.7178758998711904
+Epoch: 89 | Iteration number: [40/50] 80% | Training loss: 0.7120686292648315
+
+ End of epoch: 89 | Train Loss: 0.6947705841064453 | Training Time: 15 
+
+ End of epoch: 89 | Eval Loss: 0.6942984546933856 | Evaluating Time: 6 
+Epoch: 90 | Iteration number: [10/50] 20% | Training loss: 0.7641613066196442
+Epoch: 90 | Iteration number: [20/50] 40% | Training loss: 0.729320403933525
+Epoch: 90 | Iteration number: [30/50] 60% | Training loss: 0.7176978170871735
+Epoch: 90 | Iteration number: [40/50] 80% | Training loss: 0.7119661703705787
+
+ End of epoch: 90 | Train Loss: 0.6946243405342102 | Training Time: 14 
+
+ End of epoch: 90 | Eval Loss: 0.6939489245414734 | Evaluating Time: 7 
+Epoch: 91 | Iteration number: [10/50] 20% | Training loss: 0.7636719584465027
+Epoch: 91 | Iteration number: [20/50] 40% | Training loss: 0.7291802883148193
+Epoch: 91 | Iteration number: [30/50] 60% | Training loss: 0.7176009535789489
+Epoch: 91 | Iteration number: [40/50] 80% | Training loss: 0.7117251724004745
+
+ End of epoch: 91 | Train Loss: 0.694359976053238 | Training Time: 15 
+
+ End of epoch: 91 | Eval Loss: 0.6934887766838074 | Evaluating Time: 7 
+Epoch: 92 | Iteration number: [10/50] 20% | Training loss: 0.7638877928256989
+Epoch: 92 | Iteration number: [20/50] 40% | Training loss: 0.729213273525238
+Epoch: 92 | Iteration number: [30/50] 60% | Training loss: 0.7176055769125621
+Epoch: 92 | Iteration number: [40/50] 80% | Training loss: 0.7117442116141319
+
+ End of epoch: 92 | Train Loss: 0.6942605876922607 | Training Time: 14 
+
+ End of epoch: 92 | Eval Loss: 0.6935413224356515 | Evaluating Time: 7 
+Epoch: 93 | Iteration number: [10/50] 20% | Training loss: 0.7633902788162231
+Epoch: 93 | Iteration number: [20/50] 40% | Training loss: 0.7287285089492798
+Epoch: 93 | Iteration number: [30/50] 60% | Training loss: 0.7171320954958598
+Epoch: 93 | Iteration number: [40/50] 80% | Training loss: 0.7114861130714416
+
+ End of epoch: 93 | Train Loss: 0.6941436171531677 | Training Time: 15 
+
+ End of epoch: 93 | Eval Loss: 0.6935936723436628 | Evaluating Time: 7 
+Epoch: 94 | Iteration number: [10/50] 20% | Training loss: 0.7636904120445251
+Epoch: 94 | Iteration number: [20/50] 40% | Training loss: 0.7289485603570938
+Epoch: 94 | Iteration number: [30/50] 60% | Training loss: 0.717215629418691
+Epoch: 94 | Iteration number: [40/50] 80% | Training loss: 0.7113977432250976
+
+ End of epoch: 94 | Train Loss: 0.6940356481075287 | Training Time: 15 
+
+ End of epoch: 94 | Eval Loss: 0.6934030311448234 | Evaluating Time: 7 
+Epoch: 95 | Iteration number: [10/50] 20% | Training loss: 0.7637165904045105
+Epoch: 95 | Iteration number: [20/50] 40% | Training loss: 0.7287808179855346
+Epoch: 95 | Iteration number: [30/50] 60% | Training loss: 0.7171715259552002
+Epoch: 95 | Iteration number: [40/50] 80% | Training loss: 0.7112733110785484
+
+ End of epoch: 95 | Train Loss: 0.6938777077198028 | Training Time: 15 
+
+ End of epoch: 95 | Eval Loss: 0.6935810361589704 | Evaluating Time: 7 
+Epoch: 96 | Iteration number: [10/50] 20% | Training loss: 0.7632911264896393
+Epoch: 96 | Iteration number: [20/50] 40% | Training loss: 0.728461429476738
+Epoch: 96 | Iteration number: [30/50] 60% | Training loss: 0.7168323973814646
+Epoch: 96 | Iteration number: [40/50] 80% | Training loss: 0.7110525593161583
+
+ End of epoch: 96 | Train Loss: 0.6937498807907104 | Training Time: 15 
+
+ End of epoch: 96 | Eval Loss: 0.6930939129420689 | Evaluating Time: 7 
+Epoch: 97 | Iteration number: [10/50] 20% | Training loss: 0.7635302782058716
+Epoch: 97 | Iteration number: [20/50] 40% | Training loss: 0.7288953572511673
+Epoch: 97 | Iteration number: [30/50] 60% | Training loss: 0.71710577805837
+Epoch: 97 | Iteration number: [40/50] 80% | Training loss: 0.7112947642803192
+
+ End of epoch: 97 | Train Loss: 0.6938907587528229 | Training Time: 15 
+
+ End of epoch: 97 | Eval Loss: 0.6936772976602826 | Evaluating Time: 7 
+Epoch: 98 | Iteration number: [10/50] 20% | Training loss: 0.7631880760192871
+Epoch: 98 | Iteration number: [20/50] 40% | Training loss: 0.7285324513912201
+Epoch: 98 | Iteration number: [30/50] 60% | Training loss: 0.7168820242087046
+Epoch: 98 | Iteration number: [40/50] 80% | Training loss: 0.7109765544533729
+
+ End of epoch: 98 | Train Loss: 0.6936975991725922 | Training Time: 15 
+
+ End of epoch: 98 | Eval Loss: 0.6939186538968768 | Evaluating Time: 7 
+Epoch: 99 | Iteration number: [10/50] 20% | Training loss: 0.763514906167984
+Epoch: 99 | Iteration number: [20/50] 40% | Training loss: 0.7285145103931427
+Epoch: 99 | Iteration number: [30/50] 60% | Training loss: 0.7169118861357371
+Epoch: 99 | Iteration number: [40/50] 80% | Training loss: 0.711049385368824
+
+ End of epoch: 99 | Train Loss: 0.6935847723484039 | Training Time: 14 
+
+ End of epoch: 99 | Eval Loss: 0.6930706756455558 | Evaluating Time: 7 
+Epoch: 100 | Iteration number: [10/50] 20% | Training loss: 0.7624527215957642
+Epoch: 100 | Iteration number: [20/50] 40% | Training loss: 0.727855259180069
+Epoch: 100 | Iteration number: [30/50] 60% | Training loss: 0.7163395663102468
+Epoch: 100 | Iteration number: [40/50] 80% | Training loss: 0.7106191396713257
+
+ End of epoch: 100 | Train Loss: 0.693346335887909 | Training Time: 14 
+
+ End of epoch: 100 | Eval Loss: 0.6935342124530247 | Evaluating Time: 7 
+
+ End of Test | Dice Loss: 0.8940768837928772 | Binary Cross Entropy With Logits Loss: 0.6905378188405719 
